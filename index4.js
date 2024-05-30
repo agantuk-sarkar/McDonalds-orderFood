@@ -92,7 +92,7 @@ orderFood.addEventListener("click", function () {
     return new Promise(function (resolve, reject) {
       setTimeout(function () {
         let newImage = arr.filter(function (ele) {
-          imageContainer.innerHTML = "";
+          // imageContainer.innerHTML = "";
 
           // getting all the checkboxes elements from html
           const breakfast = document.getElementById("breakfast");
@@ -268,6 +268,7 @@ orderFood.addEventListener("click", function () {
           } else if (happyMeal.checked === true && happyMealBox === ele.name) {
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
+            // console.log(imgTag);
             imageDiv.append(imgTag);
             spanTag_orderText.textContent = "Order ID:";
             spanTag_orderText.setAttribute("class", "text-xl font-semibold");
@@ -311,7 +312,7 @@ orderFood.addEventListener("click", function () {
             // console.log(foodpromise());
           }
         });
-      }, 2000);
+      }, 3000);
     });
   }
   foodpromise().then(function () {
