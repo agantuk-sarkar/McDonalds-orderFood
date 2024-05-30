@@ -1,4 +1,4 @@
-// getting all the checkboxes from html
+// getting all the values of the checkboxes from html
 const breakfastBox = document.getElementById("breakfast").value;
 const sandwichBox = document.getElementById("sandwich").value;
 const mcCafeBox = document.getElementById("McCafe").value;
@@ -17,8 +17,8 @@ class Checkbox {
   }
 }
 
-// using array to store objects
-let arr = [];
+// using array to store objects and storing in locaStorage
+const arr = [];
 
 // storing the newly created objects into and array
 const newBreakfastBox = new Checkbox(
@@ -78,46 +78,244 @@ arr.push(
 );
 // console.log(arr);
 
+// setting thje array of objects in localStorage
+localStorage.setItem("foodItems", JSON.stringify(arr));
+
 const imageContainer = document.querySelector(".image-container");
 
 const orderFood = document.querySelector(".orderFood");
+
+// function for order food button
 orderFood.addEventListener("click", function () {
+  // function which will return new promise
   function foodpromise() {
     return new Promise(function (resolve, reject) {
       setTimeout(function () {
         let newImage = arr.filter(function (ele) {
           imageContainer.innerHTML = "";
 
+          // getting all the checkboxes elements from html
           const breakfast = document.getElementById("breakfast");
           const sandwich = document.getElementById("sandwich");
+          const mcCafe = document.getElementById("McCafe");
+          const beverage = document.getElementById("beverage");
+          const combo = document.getElementById("combo");
+          const bakery = document.getElementById("bakery");
+          const desserts = document.getElementById("desserts");
+          const happyMeal = document.getElementById("happyMeal");
+          const salads = document.getElementById("salads");
+
+          // fetching and creating image tags to show images
           const imageDiv = document.querySelector(".images");
           const imgTag = document.createElement("img");
+          const orderIdContainer = document.querySelector(".orderId-container");
+          const spanTag_orderText = document.createElement("span");
+          const spanTag_orderId = document.createElement("span");
 
           if (breakfast.checked === true && breakfastBox === ele.name) {
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
             // imageContainer.append(imageDiv);
-            console.log(ele.name);
+            // console.log(ele.name);
+            breakfast.addEventListener("change", function () {
+              if (breakfast.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
             resolve();
+
             // console.log(foodpromise());
           } else if (sandwich.checked === true && sandwichBox === ele.name) {
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
             // imageContainer.append(imageDiv);
-            console.log(ele.name);
+            // console.log(ele.name);
+            sandwich.addEventListener("change", function () {
+              if (sandwich.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
+            resolve();
+            // console.log(foodpromise());
+          } else if (mcCafe.checked === true && mcCafeBox === ele.name) {
+            imgTag.setAttribute("src", ele.imageLink);
+            imgTag.setAttribute("class", "h-full w-full");
+            imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
+            // imageContainer.append(imageDiv);
+            // console.log(ele.name);
+            mcCafe.addEventListener("change", function () {
+              if (mcCafe.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
+            resolve();
+            // console.log(foodpromise());
+          } else if (beverage.checked === true && beverageBox === ele.name) {
+            imgTag.setAttribute("src", ele.imageLink);
+            imgTag.setAttribute("class", "h-full w-full");
+            imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
+            // imageContainer.append(imageDiv);
+            // console.log(ele.name);
+            beverage.addEventListener("change", function () {
+              if (beverage.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
+            resolve();
+            // console.log(foodpromise());
+          } else if (combo.checked === true && comboBox === ele.name) {
+            imgTag.setAttribute("src", ele.imageLink);
+            imgTag.setAttribute("class", "h-full w-full");
+            imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
+            // imageContainer.append(imageDiv);
+            // console.log(ele.name);
+            combo.addEventListener("change", function () {
+              if (combo.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
+            resolve();
+            // console.log(foodpromise());
+          } else if (bakery.checked === true && bakeryBox === ele.name) {
+            imgTag.setAttribute("src", ele.imageLink);
+            imgTag.setAttribute("class", "h-full w-full");
+            imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
+            // imageContainer.append(imageDiv);
+            // console.log(ele.name);
+            bakery.addEventListener("change", function () {
+              if (bakery.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
+            resolve();
+            // console.log(foodpromise());
+          } else if (desserts.checked === true && dessertsBox === ele.name) {
+            imgTag.setAttribute("src", ele.imageLink);
+            imgTag.setAttribute("class", "h-full w-full");
+            imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
+            // imageContainer.append(imageDiv);
+            // console.log(ele.name);
+            desserts.addEventListener("change", function () {
+              if (desserts.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
+            resolve();
+            // console.log(foodpromise());
+          } else if (happyMeal.checked === true && happyMealBox === ele.name) {
+            imgTag.setAttribute("src", ele.imageLink);
+            imgTag.setAttribute("class", "h-full w-full");
+            imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
+            // imageContainer.append(imageDiv);
+            // console.log(ele.name);
+            happyMeal.addEventListener("change", function () {
+              if (happyMeal.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
+            resolve();
+            // console.log(foodpromise());
+          } else if (salads.checked === true && saladsBox === ele.name) {
+            imgTag.setAttribute("src", ele.imageLink);
+            imgTag.setAttribute("class", "h-full w-full");
+            imageDiv.append(imgTag);
+            spanTag_orderText.textContent = "Order ID:";
+            spanTag_orderText.setAttribute("class", "text-xl font-semibold");
+
+            spanTag_orderId.textContent = Date.now();
+            spanTag_orderId.setAttribute("class", "text-xl font-semibold");
+
+            orderIdContainer.append(spanTag_orderText, spanTag_orderId);
+
+            // imageContainer.append(imageDiv);
+            // console.log(ele.name);
+            salads.addEventListener("change", function () {
+              if (salads.checked === false) {
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
+              }
+            });
             resolve();
             // console.log(foodpromise());
           }
         });
-      }, 4000);
+      }, 2000);
     });
   }
   foodpromise().then(function () {
-    console.log("Success");
+    console.log("Success"); 
   });
   // console.log(foodpromise());
 });
-
-
