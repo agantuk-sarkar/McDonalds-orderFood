@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using JSON placeholder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body class="overflow-auto">
+    <!-- heading and logo for mcdonald's -->
+    <div
+      class="head-container border-2 border-red-500 h-[5rem] flex justify-center shadow-md bg-slate-600 rounded-md"
+    >
+      <div class="image-container border-2 border-green-500 h-full w-[10%]">
+        <img
+          class="h-full w-full"
+          src="https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"
+        />
+      </div>
+      <h1 class="text-4xl mt-[1rem] text-yellow-500">McDonald's</h1>
+    </div>
+    <!-- checkboxes main container -->
+    <div class="checkbox-container border-2 border-blue-500 mt-[2rem] h-[56vh] rounded-md">
+      <!-- checkboxes sub container -->
+      <div
+        class="checkbox-subContainer border-2 border-pink-500 h-full grid grid-rows-3 grid-cols-3 gap-[1rem] p-[0.5%] shadow-md bg-lime-100"
+      >
+        <!-- breakfast checkbox -->
+        <div class="breakfast-container border-2 border-green-500 p-[0.5rem]">
+          <input class="cursor-pointer" type="checkbox" id="breakfast" value="breakfast" />
+          <span class="font-semibold text-orange-500 text-2xl">Breakfast</span>
+          <img class="h-[3rem]" src="https://mrbrownbakery.com/image/images/rEyMLsj21Ooxk5mfhdeh7bSevaLGzUtczWXVDj4u.jpeg?p=full"/>
+        </div>
+        <!-- sandwich checkbox -->
+        <div class="sandwich-container border-2 border-green-500 p-[0.5rem]">
+          <input class="cursor-pointer" type="checkbox" id="sandwich" value="sandwich" />
+          <span class="font-semibold text-orange-500 text-2xl">Chicken & Sandwich</span>
+          <img class="h-[3rem]" src="https://www.southernliving.com/thmb/UW4kKKL-_M3WgP7pkL6Pb6lwcgM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Ham_Sandwich_011-1-49227336bc074513aaf8fdbde440eafe.jpg"/>
+        </div>
+        <!-- McCafe checkbox -->
+        <div class="McCafe-container border-2 border-green-500 p-[0.5rem]">
+          <input class="cursor-pointer" type="checkbox" id="McCafe" value="McCafe" />
+          <span class="font-semibold text-orange-500 text-2xl">McCafe</span>
+          <img class="h-[3rem]" src="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/1272/cached.offlinehbpl.hbpl.co.uk/news/ACC/Screenshot2024-02-20at4.09.52%E2%80%AFPM.jpeg"/>
+        </div>
+        <!-- beverage checkbox -->
+        <div class="beverage-container border-2 border-green-500 p-[0.5rem]">
+          <input class="cursor-pointer" type="checkbox" id="beverage" value="beverage" />
+          <span class="font-semibold text-orange-500 text-2xl">Beverages</span>
+          <img class="h-[3rem]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0bv7d-JEAwMEdo_1VBTBnpLOLUkPnzFVNhQ&usqp=CAU"/>
+        </div>
+        <!-- combo meal checkbox -->
+        <div class="combo-container border-2 border-green-500 p-[0.5rem]">
+          <input class="cursor-pointer" type="checkbox" id="combo" value="combo" />
+          <span class="font-semibold text-orange-500 text-2xl">Combo Meal</span>
+          <img class="h-[3rem]" src="https://s7d1.scene7.com/is/image/mcdonalds/Header_BigMacCombo_v1_832x472:nutrition-calculator-tile?wid=472&hei=472&dpr=off"/>
+        </div>
+        <!-- bakery checkbox -->
+        <div class="bakery-container border-2 border-green-500 p-[0.5rem]">
+          <input class="cursor-pointer" type="checkbox" id="bakery" value="bakery" />
+          <span class="font-semibold text-orange-500 text-2xl">McCafe & Bakery</span>
+          <img class="h-[3rem]" src="https://i0.wp.com/nerdbot.com/wp-content/uploads/2023/07/mccafe.jpg?fit=2000%2C1461&ssl=1"/>
+        </div>
+        <!-- desserts checkbox -->
+        <div class="desserts-container border-2 border-green-500 p-[0.5rem]">
+          <input class="cursor-pointer" type="checkbox" id="desserts" value="desserts" />
+          <span class="font-semibold text-orange-500 text-2xl">Desserts & Shakes</span>
+          <img class="h-[3rem]" src="https://www.foodandwine.com/thmb/Nn2DZrmUo5p7DLQMUYqI8SW7Etc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/McDonalds-Shamrock-Shake-Is-Back-Already-FT-BLOG-0206-bbdc8c4ce5014e2294fd4a22a999943d.jpg"/>
+        </div>
+        <!-- happy meal checkbox -->
+        <div class="happyMeal-container border-2 border-green-500 p-[0.5rem">
+          <input class="cursor-pointer" type="checkbox" id="happyMeal" value="happyMeal" />
+          <span class="font-semibold text-orange-500 text-2xl">Happy Meal</span>
+          <img class="h-[3rem]" src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202103_7002_4McNuggetsHappyMeal_AppleSlices_WhiteMilkJug_Left_832x472:nutrition-calculator-tile"/>
+        </div>
+        <!-- salads checkbox -->
+        <div class="salads-container border-2 border-green-500 p-[0.5rem">
+          <input class="cursor-pointer" type="checkbox" id="salads" value="salads" />
+          <span class="font-semibold text-orange-500 text-2xl">Salads</span>
+          <img class="h-[3rem]" src="https://static-ssl.businessinsider.com/image/56b4c0f12e52651a008b523a-689-517/screen%20shot%202016-02-05%20at%2010.28.08%20am.jp2"/>
+        </div>
+      </div>
+    </div>
+    <div class="orderFood-container border-2 border-green-500 h-[8vh] flex justify-center">
+      <button class="orderFood border-2 bg-green-500 h-full w-[20%] text-2xl text-white cursor-pointer rounded-md">Order Food</button>
+    </div>
+    <div class="image-container border-2 border-blue-500 mt-[1rem] h-[40vh] flex justify-center">
+      <div class="images h-full w-[50%]"></div>
+    </div>
+  </body>
+</html>
+<script src="./index4.js"></script>
