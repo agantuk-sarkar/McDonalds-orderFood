@@ -20,7 +20,7 @@ class Checkbox {
 // using array to store objects and storing in locaStorage
 const arr = [];
 
-// storing the newly created objects into and array
+// storing the newly created objects from a class into and array
 const newBreakfastBox = new Checkbox(
   breakfastBox,
   "https://mrbrownbakery.com/image/images/rEyMLsj21Ooxk5mfhdeh7bSevaLGzUtczWXVDj4u.jpeg?p=full"
@@ -78,7 +78,7 @@ arr.push(
 );
 // console.log(arr);
 
-// setting thje array of objects in localStorage
+// setting the array of objects in localStorage
 localStorage.setItem("foodItems", JSON.stringify(arr));
 
 const imageContainer = document.querySelector(".image-container");
@@ -94,16 +94,16 @@ orderFood.addEventListener("click", function () {
         let newImage = arr.filter(function (ele) {
           // imageContainer.innerHTML = "";
 
-          // getting all the checkboxes elements from html
-          const breakfast = document.getElementById("breakfast");
-          const sandwich = document.getElementById("sandwich");
-          const mcCafe = document.getElementById("McCafe");
-          const beverage = document.getElementById("beverage");
-          const combo = document.getElementById("combo");
-          const bakery = document.getElementById("bakery");
-          const desserts = document.getElementById("desserts");
-          const happyMeal = document.getElementById("happyMeal");
-          const salads = document.getElementById("salads");
+          // // getting all the checkboxes elements from html
+          // const breakfast = document.getElementById("breakfast");
+          // const sandwich = document.getElementById("sandwich");
+          // const mcCafe = document.getElementById("McCafe");
+          // const beverage = document.getElementById("beverage");
+          // const combo = document.getElementById("combo");
+          // const bakery = document.getElementById("bakery");
+          // const desserts = document.getElementById("desserts");
+          // const happyMeal = document.getElementById("happyMeal");
+          // const salads = document.getElementById("salads");
 
           // fetching and creating image tags to show images
           const imageDiv = document.querySelector(".images");
@@ -113,9 +113,13 @@ orderFood.addEventListener("click", function () {
           const spanTag_orderId = document.createElement("span");
 
           if (breakfast.checked === true && breakfastBox === ele.name) {
+            imageDiv.innerHTML = "";
+            orderIdContainer.innerHTML = "";
+
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
+            // imageContainer.append(imageDiv);
             spanTag_orderText.textContent = "Order ID:";
             spanTag_orderText.setAttribute("class", "text-xl font-semibold");
             spanTag_orderId.textContent = Date.now();
@@ -134,9 +138,13 @@ orderFood.addEventListener("click", function () {
 
             // console.log(foodpromise());
           } else if (sandwich.checked === true && sandwichBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
+
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
+            // imageContainer.append(imageDiv);
             spanTag_orderText.textContent = "Order ID:";
             spanTag_orderText.setAttribute("class", "text-xl font-semibold");
 
@@ -148,14 +156,17 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             sandwich.addEventListener("change", function () {
-              if (sandwich.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!sandwich.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           } else if (mcCafe.checked === true && mcCafeBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
+
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
@@ -170,14 +181,16 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             mcCafe.addEventListener("change", function () {
-              if (mcCafe.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!mcCafe.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           } else if (beverage.checked === true && beverageBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
@@ -192,14 +205,16 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             beverage.addEventListener("change", function () {
-              if (beverage.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!beverage.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           } else if (combo.checked === true && comboBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
@@ -214,14 +229,16 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             combo.addEventListener("change", function () {
-              if (combo.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!combo.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           } else if (bakery.checked === true && bakeryBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
@@ -236,14 +253,16 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             bakery.addEventListener("change", function () {
-              if (bakery.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!bakery.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           } else if (desserts.checked === true && dessertsBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
@@ -258,14 +277,16 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             desserts.addEventListener("change", function () {
-              if (desserts.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!desserts.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           } else if (happyMeal.checked === true && happyMealBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             // console.log(imgTag);
@@ -281,14 +302,16 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             happyMeal.addEventListener("change", function () {
-              if (happyMeal.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!happyMeal.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           } else if (salads.checked === true && saladsBox === ele.name) {
+            imgTag.innerHTML = "";
+            orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
@@ -303,20 +326,91 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             salads.addEventListener("change", function () {
-              if (salads.checked === false) {
-                imageDiv.innerHTML = "";
-                orderIdContainer.innerHTML = "";
+              if (!salads.checked) {
+                imgTag.innerHTML = "";
+                // orderIdContainer.innerHTML = "";
               }
             });
             resolve();
             // console.log(foodpromise());
           }
         });
-      }, 3000);
+      }, 2000);
     });
   }
   foodpromise().then(function () {
-    console.log("Success"); 
+    console.log("Success");
   });
   // console.log(foodpromise());
 });
+
+// getting all the input checkboxes elements from html
+const breakfast = document.getElementById("breakfast");
+const sandwich = document.getElementById("sandwich");
+const mcCafe = document.getElementById("McCafe");
+const beverage = document.getElementById("beverage");
+const combo = document.getElementById("combo");
+const bakery = document.getElementById("bakery");
+const desserts = document.getElementById("desserts");
+const happyMeal = document.getElementById("happyMeal");
+const salads = document.getElementById("salads");
+const selectAll = document.getElementById("selectAll");
+
+// creating a new array to push all the checkboxes
+const checkboxArray = [];
+checkboxArray.push(
+  breakfast,
+  sandwich,
+  mcCafe,
+  beverage,
+  combo,
+  bakery,
+  desserts,
+  happyMeal,
+  salads
+);
+// console.log(checkboxArray);
+
+// change event for select all checkbox
+selectAll.addEventListener("change", function () {
+  if (selectAll.checked) {
+    checkboxArray.forEach(function (ele) {
+      ele.checked = true;
+    });
+  } else if (!selectAll.checked) {
+    checkboxArray.forEach(function (ele) {
+      ele.checked = false;
+      const imageDiv = document.querySelector(".images");
+      const orderIdContainer = document.querySelector(".orderId-container");
+
+      imageDiv.innerHTML = "";
+      orderIdContainer.innerHTML = "";
+    });
+  }
+});
+
+// change event for all food items checkboxes
+breakfast.addEventListener("change",checkboxCheckAndUncheck);
+sandwich.addEventListener("change", checkboxCheckAndUncheck);
+mcCafe.addEventListener("change", checkboxCheckAndUncheck);
+beverage.addEventListener("change", checkboxCheckAndUncheck);
+combo.addEventListener("change", checkboxCheckAndUncheck);
+bakery.addEventListener("change", checkboxCheckAndUncheck);
+desserts.addEventListener("change", checkboxCheckAndUncheck);
+happyMeal.addEventListener("change", checkboxCheckAndUncheck);
+salads.addEventListener("change", checkboxCheckAndUncheck);
+
+// function for check and uncheck checkboxes
+function checkboxCheckAndUncheck(){
+  let checkForTrue = checkboxArray.every(function(ele){
+    return ele.checked;
+  });
+
+  if(checkForTrue){
+    selectAll.checked = true;
+  } else{
+    selectAll.checked = false;
+  }
+};
+
+
