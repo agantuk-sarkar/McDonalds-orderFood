@@ -85,6 +85,18 @@ const imageContainer = document.querySelector(".image-container");
 
 const orderFood = document.querySelector(".orderFood");
 
+// getting all the input checkboxes elements from html
+const breakfast = document.getElementById("breakfast");
+const sandwich = document.getElementById("sandwich");
+const mcCafe = document.getElementById("McCafe");
+const beverage = document.getElementById("beverage");
+const combo = document.getElementById("combo");
+const bakery = document.getElementById("bakery");
+const desserts = document.getElementById("desserts");
+const happyMeal = document.getElementById("happyMeal");
+const salads = document.getElementById("salads");
+const selectAll = document.getElementById("selectAll");
+
 // function for order food button
 orderFood.addEventListener("click", function () {
   // function which will return new promise
@@ -92,18 +104,6 @@ orderFood.addEventListener("click", function () {
     return new Promise(function (resolve, reject) {
       setTimeout(function () {
         let newImage = arr.filter(function (ele) {
-          // imageContainer.innerHTML = "";
-
-          // // getting all the checkboxes elements from html
-          // const breakfast = document.getElementById("breakfast");
-          // const sandwich = document.getElementById("sandwich");
-          // const mcCafe = document.getElementById("McCafe");
-          // const beverage = document.getElementById("beverage");
-          // const combo = document.getElementById("combo");
-          // const bakery = document.getElementById("bakery");
-          // const desserts = document.getElementById("desserts");
-          // const happyMeal = document.getElementById("happyMeal");
-          // const salads = document.getElementById("salads");
 
           // fetching and creating image tags to show images
           const imageDiv = document.querySelector(".images");
@@ -111,6 +111,8 @@ orderFood.addEventListener("click", function () {
           const orderIdContainer = document.querySelector(".orderId-container");
           const spanTag_orderText = document.createElement("span");
           const spanTag_orderId = document.createElement("span");
+
+          // imageDiv.innerHTML = "";
 
           if (breakfast.checked === true && breakfastBox === ele.name) {
             imageDiv.innerHTML = "";
@@ -129,7 +131,7 @@ orderFood.addEventListener("click", function () {
             // imageContainer.append(imageDiv);
             // console.log(ele.name);
             breakfast.addEventListener("change", function () {
-              if (breakfast.checked === false) {
+              if (!breakfast.checked) {
                 imageDiv.innerHTML = "";
                 orderIdContainer.innerHTML = "";
               }
@@ -138,7 +140,8 @@ orderFood.addEventListener("click", function () {
 
             // console.log(foodpromise());
           } else if (sandwich.checked === true && sandwichBox === ele.name) {
-            imgTag.innerHTML = "";
+            // imageDiv.innerHTML = "";
+            // ele.imageLink.style = "hidden";
             orderIdContainer.innerHTML = "";
 
             imgTag.setAttribute("src", ele.imageLink);
@@ -164,7 +167,7 @@ orderFood.addEventListener("click", function () {
             resolve();
             // console.log(foodpromise());
           } else if (mcCafe.checked === true && mcCafeBox === ele.name) {
-            imgTag.innerHTML = "";
+            // imageDiv.innerHTML = "";
             orderIdContainer.innerHTML = "";
 
             imgTag.setAttribute("src", ele.imageLink);
@@ -189,7 +192,7 @@ orderFood.addEventListener("click", function () {
             resolve();
             // console.log(foodpromise());
           } else if (beverage.checked === true && beverageBox === ele.name) {
-            imgTag.innerHTML = "";
+            // imgTag.innerHTML = "";
             orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
@@ -213,7 +216,7 @@ orderFood.addEventListener("click", function () {
             resolve();
             // console.log(foodpromise());
           } else if (combo.checked === true && comboBox === ele.name) {
-            imgTag.innerHTML = "";
+            // imgTag.innerHTML = "";
             orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
@@ -237,7 +240,7 @@ orderFood.addEventListener("click", function () {
             resolve();
             // console.log(foodpromise());
           } else if (bakery.checked === true && bakeryBox === ele.name) {
-            imgTag.innerHTML = "";
+            // imgTag.innerHTML = "";
             orderIdContainer.innerHTML = "";
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
@@ -344,20 +347,9 @@ orderFood.addEventListener("click", function () {
   // console.log(foodpromise());
 });
 
-// getting all the input checkboxes elements from html
-const breakfast = document.getElementById("breakfast");
-const sandwich = document.getElementById("sandwich");
-const mcCafe = document.getElementById("McCafe");
-const beverage = document.getElementById("beverage");
-const combo = document.getElementById("combo");
-const bakery = document.getElementById("bakery");
-const desserts = document.getElementById("desserts");
-const happyMeal = document.getElementById("happyMeal");
-const salads = document.getElementById("salads");
-const selectAll = document.getElementById("selectAll");
-
-// creating a new array to push all the checkboxes
+// creating a new array to push all the checkbox elements
 const checkboxArray = [];
+
 checkboxArray.push(
   breakfast,
   sandwich,
@@ -371,7 +363,7 @@ checkboxArray.push(
 );
 // console.log(checkboxArray);
 
-// change event for select all checkbox
+// change event for selectAll checkbox
 selectAll.addEventListener("change", function () {
   if (selectAll.checked) {
     checkboxArray.forEach(function (ele) {
@@ -400,7 +392,7 @@ desserts.addEventListener("change", checkboxCheckAndUncheck);
 happyMeal.addEventListener("change", checkboxCheckAndUncheck);
 salads.addEventListener("change", checkboxCheckAndUncheck);
 
-// function for check and uncheck checkboxes
+// function for check if all checkboxes are checked or not
 function checkboxCheckAndUncheck(){
   let checkForTrue = checkboxArray.every(function(ele){
     return ele.checked;
@@ -408,9 +400,11 @@ function checkboxCheckAndUncheck(){
 
   if(checkForTrue){
     selectAll.checked = true;
+    // console.log("checked:",checkForTrue)
   } else{
     selectAll.checked = false;
   }
 };
+
 
 
