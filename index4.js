@@ -115,7 +115,7 @@ orderFood.addEventListener("click", function () {
           // imageDiv.innerHTML = "";
 
           if (breakfast.checked === true && breakfastBox === ele.name) {
-            imageDiv.innerHTML = "";
+            // imageDiv.innerHTML = "";
             orderIdContainer.innerHTML = "";
 
             imgTag.setAttribute("src", ele.imageLink);
@@ -147,6 +147,7 @@ orderFood.addEventListener("click", function () {
             imgTag.setAttribute("src", ele.imageLink);
             imgTag.setAttribute("class", "h-full w-full");
             imageDiv.append(imgTag);
+            
             // imageContainer.append(imageDiv);
             spanTag_orderText.textContent = "Order ID:";
             spanTag_orderText.setAttribute("class", "text-xl font-semibold");
@@ -160,8 +161,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             sandwich.addEventListener("change", function () {
               if (!sandwich.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
@@ -185,8 +186,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             mcCafe.addEventListener("change", function () {
               if (!mcCafe.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
@@ -209,8 +210,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             beverage.addEventListener("change", function () {
               if (!beverage.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
@@ -233,8 +234,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             combo.addEventListener("change", function () {
               if (!combo.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
@@ -257,8 +258,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             bakery.addEventListener("change", function () {
               if (!bakery.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
@@ -281,8 +282,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             desserts.addEventListener("change", function () {
               if (!desserts.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
@@ -306,8 +307,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             happyMeal.addEventListener("change", function () {
               if (!happyMeal.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
@@ -330,8 +331,8 @@ orderFood.addEventListener("click", function () {
             // console.log(ele.name);
             salads.addEventListener("change", function () {
               if (!salads.checked) {
-                imgTag.innerHTML = "";
-                // orderIdContainer.innerHTML = "";
+                imageDiv.innerHTML = "";
+                orderIdContainer.innerHTML = "";
               }
             });
             resolve();
