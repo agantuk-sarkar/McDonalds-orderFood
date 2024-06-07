@@ -1,4 +1,4 @@
-// getting all the values of the checkboxes from html
+// getting all the values of the input checkboxes from html
 const breakfastBox = document.getElementById("breakfast").value;
 const sandwichBox = document.getElementById("sandwich").value;
 const mcCafeBox = document.getElementById("McCafe").value;
@@ -20,7 +20,7 @@ class Checkbox {
 // using array to store objects and storing in locaStorage
 const arr = [];
 
-// storing the newly created objects from a class into and array
+// creating new objects from a class using new keyword
 const newBreakfastBox = new Checkbox(
   breakfastBox,
   "https://mrbrownbakery.com/image/images/rEyMLsj21Ooxk5mfhdeh7bSevaLGzUtczWXVDj4u.jpeg?p=full"
@@ -65,6 +65,8 @@ const newSaladsBox = new Checkbox(
   saladsBox,
   "https://static-ssl.businessinsider.com/image/56b4c0f12e52651a008b523a-689-517/screen%20shot%202016-02-05%20at%2010.28.08%20am.jp2"
 );
+
+// storing the newly created objects into an array
 arr.push(
   newBreakfastBox,
   newSandwichBox,
@@ -81,8 +83,10 @@ arr.push(
 // setting the array of objects in localStorage
 localStorage.setItem("foodItems", JSON.stringify(arr));
 
+// fetching the main image container
 const imageContainer = document.querySelector(".image-container");
 
+// fetching the order food button container
 const orderFood = document.querySelector(".orderFood");
 
 // getting all the input checkboxes elements from html
@@ -97,7 +101,7 @@ const happyMeal = document.getElementById("happyMeal");
 const salads = document.getElementById("salads");
 const selectAll = document.getElementById("selectAll");
 
-// function for order food button
+// function for order food button using click event
 orderFood.addEventListener("click", function () {
   // function which will return new promise
   function foodpromise() {
@@ -364,7 +368,7 @@ checkboxArray.push(
 );
 // console.log(checkboxArray);
 
-// change event for selectAll checkbox
+// function for change event for selectAll checkbox
 selectAll.addEventListener("change", function () {
   if (selectAll.checked) {
     checkboxArray.forEach(function (ele) {
@@ -393,7 +397,7 @@ desserts.addEventListener("change", checkboxCheckAndUncheck);
 happyMeal.addEventListener("change", checkboxCheckAndUncheck);
 salads.addEventListener("change", checkboxCheckAndUncheck);
 
-// function for check if all checkboxes are checked or not
+// function to check if all checkboxes are checked or not
 function checkboxCheckAndUncheck(){
   let checkForTrue = checkboxArray.every(function(ele){
     return ele.checked;
